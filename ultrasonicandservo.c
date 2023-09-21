@@ -3,8 +3,8 @@
 
 Servo myservo;
 int servoPin = 19;  
-int trigPin = 2;    // Ultrasonic sensor trigger pin
-int echoPin = 4;    // Ultrasonic sensor echo pin
+int trigPin = 2;    
+int echoPin = 4;    
 
 void setup() {
   myservo.attach(servoPin);
@@ -28,12 +28,12 @@ void loop() {
   Serial.println(" cm");
 
   if (distance_cm < 7.0) {
-    // Open the lid (move servo to 90 degrees)
+  
     myservo.write(160);
-    delay(1000);  // Adjust delay to control how long the lid stays open
+    delay(1000);  
   } else {
-    // Close the lid (move servo back to 0 degrees)
+    
     myservo.write(0);
-    delay(1000);  // Adjust delay to control how long the lid stays closed
+    delay(1000);  
   }
 }
